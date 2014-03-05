@@ -1,0 +1,16 @@
+development:
+  host: localhost
+  database: represent_development
+
+test:
+  host: localhost
+  database: represent_test
+
+# set these environment variables on your prod server
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOLAB_URI'] %>
+      options:
+        safe: true
+        skip_version_check: true

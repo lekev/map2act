@@ -1,0 +1,52 @@
+#menu.menu
+  .wrapper
+    .logo
+      - if @global_settings.logo?
+        = link_to image_tag(@global_settings.logo.url(:logo_style)), root_path
+      - else
+        .v-spacer20
+        = "#{@global_settings.site_name.titleize}"
+        .v-spacer20
+
+    .blurb
+      This map was made to connect and promote the philippine tech startup community.
+      Let's put the Philippines on the map!
+    .buttons
+      %a.btn.btn-large.btn{"data-toggle" => "modal", :href => "#modal_info"} More Info
+      %a.btn.btn-large.btn-info{"data-toggle" => "modal", :href => "#modal_add"} Add Something!
+    .share
+      %a.twitter-share-button{"data-count" => "none", "data-text" => "Let's put philippine startups on the map:", "data-url" => "http://www.represent.ph", "data-via" => "@proudcloud", :href => "https://twitter.com/share"} 
+    .blurb
+      %span Inspired by
+      = link_to "RepresentMap", "http://www.representmap.com"
+      and ported to Ruby on Rails by 
+      %a{href: "http://www.twitter.com/hvictorsolis"}@hvictorsolis
+      + 
+      %a{href: "http://www.twitter.com/jayfajardo"}@jayfajardo
+      +
+      %a{href: "http://www.twitter.com/proudcloud"}@proudcloud
+      
+    .search
+      %input#search{:autocomplete => "off", "data-provide" => "typeahead", :name => "search", :placeholder => "Type a company name...", :type => "text"}/
+
+  %ul#list.list
+    - index = 0
+    - TYPES.each do |type|
+      %li.category
+        .category_item
+          .category_toggle{:id => "filter_#{type[1]}", :onClick => "toggle('#{type[1]}')"}
+          %a.category_info{:href => "#", :onClick => "toggleList('#{type[1]}')"}
+            %img{:alt => "", :src => "./images/icons/#{type[1]}.png"}>/
+            #{type[0]}
+            %span.total (#{@markers.send(type[1].to_sym).length})
+        %ul.list-items{:class => "list-#{type[1]}"}
+          - @markers.send(type[1].to_sym).each do |marker|
+            %li{:class => "#{marker.type}"}
+              %a{:href => "#", :onClick => "goToMarker('#{index}')", :onMouseOut => "markerListMouseOut('#{index}')", :onMouseOver => "markerListMouseOver('#{index}')"} 
+                #{marker.title}
+                -if marker.type == 'event'
+                  ,&nbsp;
+                  #{marker.date.strftime("%b %d")}
+            - index+=1
+
+

@@ -1,0 +1,100 @@
+= simple_form_for(@place, html: {id: "modal_addform", class: "form-horizontal"}) do |f|
+  #result
+    - if @origin 
+      .control-group
+        %label.control-label{for: "add_approval"} Approved
+        .controls
+          = f.input :approved, as: :boolean, label: false, input_html: {class: "input-xlarge"} 
+  %fieldset
+    .control-group
+      %label.control-label{for: "add_owner_name"} Your Name
+      .controls
+        = f.input :owner_name, label: false, maxlength: 100, input_html: {class: "input-xlarge"} 
+    .control-group
+      %label.control-label{:for => "add_owner_email"} Your Email
+      .controls
+        = f.input :owner_email, label: false, input_html: {class: "input-xlarge"} 
+    .control-group
+      %label.control-label{:for => "add_title"} Company/Event Name
+      .controls
+        = f.input :title, label: false,  input_html: {class: "input-xlarge"}
+    .control-group
+      %label.control-label{:for => "add_type"} Type
+      .controls
+        = f.input :type, collection: TYPES, include_blank: false, label: false 
+
+    .control-group.form-date
+      %label.control-label{:for => "add_date"} Event Date
+      .controls
+        = f.input :date, include_blank: false, label: false, input_html: {class: "input-xlarge"}
+
+
+    .control-group
+      %label.control-label{for: "add_longitude"} Coordinates
+      .controls
+        = f.input :lat, label: false, required: false, placeholder: "Latitude", input_html: {class: "input-medium"}, wrapper_html: {class: "span2", style: "margin-left: 0px;"}
+        = f.input :lng, label: false, required: false, placeholder: "Longitude", input_html: {class: "input-medium"}, wrapper_html: {class: "span2", style: "margin-left: 30px;"}
+        .clearfix
+        %p.help-block
+          We prefer that you enter your coordinates for accuracy. You can 
+          = link_to "use Google Maps", "http://support.google.com/maps/bin/answer.py?hl=en&answer=1334236", target: "_new"
+          to find your coordinates. 
+    .control-group
+      %label.control-label{:for => "add_address"} Address
+      .controls
+        = f.input :address, label: false, input_html: {class: "input-xlarge"}
+        %p.help-block
+          Should be your
+          = succeed "." do
+            %b full street address (including city and zip)
+          If it works on Google Maps, it will work here.
+    .control-group
+      %label.control-label{:for => "add_uri"} Website URL
+      .controls
+        = f.input :uri, label: false, placeholder: "http://www.yourdomain.com",input_html: {class: "input-xlarge"}
+        %p.help-block
+          Should be your full URL with no trailing slash, e.g. "http://www.yoursite.com"
+    .control-group
+      %label.control-label{:for => "add_description"} Description
+      .controls
+        = f.input :description, label: false, input_html: {class: "input-xlarge", maxlength: "150"}
+        %p.help-block
+          Brief, concise description. What's your product? What problem do you solve? Max 150 chars.
+
+  .modal-footer.pull-right
+    %button#submit-it.btn.btn-primary.btn-medium
+      %span
+        Save
+    - if !@origin.blank? 
+      %a{href: places_path}
+        %button.btn.btn-medium
+          Cancel 
+    - else
+      %a.btn.btn-medium{"data-dismiss" => "modal", :href => "#"} Close
+    
+  
+:javascript
+  $(document).ready(function() {
+    if ($("#place_type option:selected").text() != "Events"){ 
+      $(".form-date").hide();
+    }
+  });
+
+  $("#place_date").datepicker({ format: 'MM d, yyyy' });
+
+  $("#place_type").change(function() {
+    if ($("#place_type option:selected").val() == "event") {
+      $(".form-date").slideToggle();
+      $("#place_date").attr("required", "required");
+    }
+    else
+    {
+      if ($("#place_date").is(":visible")) {
+        $(".form-date").slideToggle();
+        $("#place_date").removeAttr("required", "required");
+      }
+    }
+  });
+  
+  
+  

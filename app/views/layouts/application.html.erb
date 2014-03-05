@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @global_settings.site_name %></title>
+  <%= include_gon %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=false" %>
+  <%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+<%= render "layouts/analytics" %>
+</body>
+</html>
