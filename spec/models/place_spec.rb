@@ -145,8 +145,8 @@ describe Place do
     end
 
     describe "ensure_country" do
-      it "appends ', Philippines' to the address" do
-        @place.address.should include(", Philippines")
+      it "appends ', Israel' to the address" do
+        @place.address.should include(", Israel")
       end
     end
 

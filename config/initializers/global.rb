@@ -1,6 +1,6 @@
 SITE_NAME = "Represent.ph"
 
-COUNTRY = "Philippines"
+COUNTRY = "Israel"
 CITY = ""
 
 GOOGLE_ANALYTICS_CODE = ""

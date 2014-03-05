@@ -44,8 +44,8 @@ class Place
   end
 
   def ensure_country
-    if self.address.downcase.index("philippines").nil?
-      self.address << ", Philippines" # we need this country user defined in the future
+    if self.address.downcase.index("Israel").nil?
+      self.address << ", Israel" # we need this country user defined in the future
     end
 
   end
