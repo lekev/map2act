@@ -34,7 +34,7 @@ end
 
 group :development, :test do
   gem "rspec-rails"
-  gem "thin"
+  
 end
 
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
@@ -54,3 +54,4 @@ gem "gon"
 gem 'geocoder'
 
 gem 'kaminari'
+gem "thin"
