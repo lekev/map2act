@@ -1,4 +1,3 @@
-
 /*
 $ ->
   if $("#place_type option:selected").text() != "Events" 
@@ -17,3 +16,17 @@ $("#place_type").change ->
       $(".form-date").slideToggle()
       $("#place_date").removeAttr("required", "required")
 */
+
+
+$(document).ready(function() {
+
+    $('#modal_add').on('shown', function() {
+
+        var latlng = new google.maps.LatLng(31.9298264, 34.768551);
+
+        google.maps.event.trigger(map_form, "resize");
+        map_form.setCenter(latlng);
+
+    });
+
+});

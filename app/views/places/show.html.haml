@@ -17,10 +17,17 @@
   = link_to "Cancel", places_path, class: "btn"
 
 %h5
-  Description
+  Short description
 %p
   = @place.description
 %br
+
+%h5
+  Long Description
+%p
+  = @place.description_big
+%br
+
 %h5
   Address
 %p

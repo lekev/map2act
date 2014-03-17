@@ -225,14 +225,16 @@ function initialize() {
                     "<div class='marker_title'>" + val[0] + "</div>" +
                     "<div class='marker_uri'><a target='_blank' href='" + markerURI + "'>" + markerURI_short + "</a></div>" +
                     "<div class='marker_desc'>" + val[4] + "</div>" +
-                    "<div class='marker_date'>" + val[7] + "</div>" +
+                    "<div class='marker_date'>" + val[8] + "</div>" +
                     "<div class='marker_address'>" + val[6] + "</div>");
 
             } else {
+                console.log(val)
                 infowindow.setContent(
-                    "<div class='marker_title'>" + val[0] + "</div>" +
-                    "<div class='marker_uri'><a target='_blank' href='" + markerURI + "'>" + markerURI_short + "</a></div>" +
+                    "<h4 class='marker_title'>" + val[0] + "<a target='_blank' href='" + markerURI + "'>" + "  Website" + "</a> </h4>" +
                     "<div class='marker_desc'>" + val[4] + "</div>" +
+                    //"<div class='marker_uri'><a target='_blank' href='" + markerURI + "'>" + "Website" + "</a></div>" +
+                    "<p class='marker_desc'>" + val[7] + "</p>" +
                     "<div class='marker_address'>" + val[6] + "</div>");
             }
             infowindow.open(map, this);

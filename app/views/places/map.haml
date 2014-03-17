@@ -2,14 +2,8 @@
 %html
   %head
  
-    / This site was based on the Represent.LA project by:
-    / Alex Benzer (@abenzer)
-    / Tara Tiger Brown (@tara)
-    / Sean Bonner (@seanbonner)
-
-    / Create a map for your startup community!
-    / https://github.com/abenzer/represent-map
-    %title represent.ph - map of the philippine startup community
+    
+    %title Mapped2act 
     %meta{:content => "width=device-width, initial-scale=1.0, user-scalable=no", :name => "viewport"}
       %meta{:charset => "UTF-8"}
         %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,700", :rel => "stylesheet", :type => "text/css"}
@@ -19,6 +13,7 @@
     = javascript_include_tag "form"
 
   %body
+
     .container
       = render "layouts/messages"
       .canvas
@@ -26,6 +21,8 @@
       .sidebar
         = render "menu"
         = render "menu_mobile"
+        = render "nav_bar"
+        = render "footer"
     = render "more_info"
     = render "modal_form"
 

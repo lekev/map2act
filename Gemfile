@@ -40,6 +40,8 @@ end
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem "gmaps-autocomplete-rails"
 gem "haml"
 gem "haml-rails"
 gem "simple_form"

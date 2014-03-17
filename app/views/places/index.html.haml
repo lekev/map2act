@@ -28,10 +28,6 @@
             = "Accelerators"
             %span.badge.badge-info.pull-right= @places.accelerator.count
         %li
-          = link_to "#incubator", :'data-toggle' => 'tab' do
-            = "Incubators"
-            %span.badge.badge-info.pull-right= @places.incubator.count
-        %li
           = link_to "#coworking", :'data-toggle' => 'tab' do
             = "Coworking"
             %span.badge.badge-info.pull-right= @places.coworking.count
@@ -40,17 +36,17 @@
             = "Investors"
             %span.badge.badge-info.pull-right= @places.investor.count
         %li
-          = link_to "#service", :'data-toggle' => 'tab' do
-            = "Consulting"
-            %span.badge.badge-info.pull-right= @places.service.count
+          = link_to "#academy", :'data-toggle' => 'tab' do
+            = "Academy"
+            %span.badge.badge-info.pull-right= @places.academy.count
         %li
-          = link_to "#event", :'data-toggle' => 'tab' do
-            = "Events"
-            %span.badge.badge-info.pull-right= @places.event.count
+          = link_to "#hub", :'data-toggle' => 'tab' do
+            = "Hub"
+            %span.badge.badge-info.pull-right= @places.hub.count
         %li
-          = link_to "#past_event", :'data-toggle' => 'tab' do
-            = "Past Events"
-            %span.badge.badge-info.pull-right= @places.past_event.count
+          = link_to "#permaculture", :'data-toggle' => 'tab' do
+            = "Permaculture"
+            %span.badge.badge-info.pull-right= @places.permaculture.count
 
     .tabbable.span10
       .tab-content
@@ -62,16 +58,14 @@
           = render 'places/admin/startups'
         .tab-pane#accelerator
           = render 'places/admin/accelerators'
-        .tab-pane#incubator
-          = render 'places/admin/incubators'
         .tab-pane#coworking
           = render 'places/admin/coworkings'
         .tab-pane#investor
           = render 'places/admin/investors'
-        .tab-pane#service
-          = render 'places/admin/services'
+        .tab-pane#academy
+          = render 'places/admin/academies'
         .tab-pane#event
-          = render 'places/admin/events'
+          = render 'places/admin/hub'
         .tab-pane#past_event
-          = render 'places/admin/past_events'
+          = render 'places/admin/permaculture'
       

@@ -12,6 +12,7 @@ class Place
   field :address
   field :uri
   field :description
+  field :description_big
   field :sector
   field :owner_name
   field :owner_email
@@ -25,11 +26,11 @@ class Place
   scope :incubator, where(type: "incubator").asc(:title)
   scope :coworking, where(type: "coworking").asc(:title)
   scope :investor, where(type: "investor").asc(:title)
-  scope :service, where(type: "service").asc(:title)
-  scope :event, where(type: "event", :date.gte => Date.today).asc(:date)
-  scope :past_event, where(type: "event", :date.lt => Date.today).asc(:date)
+  scope :academy, where(type: "academy").asc(:title)
+  scope :hub, where(type: "hub").asc(:title)
+  scope :permaculture, where(type: "permaculture").asc(:title)
 
-  validates_presence_of :title, :address, :uri, :description, :owner_name, :owner_email
+  validates_presence_of :title, :address, :uri, :description,:description_big , :owner_name, :owner_email
   validates_presence_of :date, if: :event?
 
   geocoded_by :address

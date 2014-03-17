@@ -1,9 +1,10 @@
-TYPES = [['Startups', 'startup'],
-          ['Accelerators', 'accelerator'],
-          ['Incubators', 'incubator'],
-          ['Coworking', 'coworking'],
-          ['Investors', 'investor'],
-          ['Consulting', 'service'],
-          ['Events', 'event']]
+# encoding: UTF-8
+TYPES = [["סטארט-אפ", 'startup'],
+          ['חממות ומאיצים', 'accelerator'],
+          ['קואופרטיב', 'coworking'],
+          ['קרנות ומשקיעים', 'investor'],
+          ['אקדמיה והכשרה', 'academy'],
+      	['פרמקלצ', 'permaculture'], 
+          ['האב', 'hub']]
 
 

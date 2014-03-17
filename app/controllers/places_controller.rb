@@ -37,8 +37,10 @@ class PlacesController < ApplicationController
                 "#{value.lat}",
                 "#{value.lng}", 
                 "#{value.description}", 
+
                 "#{value.uri}", 
                 "#{value.address}",
+                "#{value.description_big}",
                 "#{value.date.strftime("%a, %b %e, %Y") if value.type == "event"}"]
         gon.places.push place
       end

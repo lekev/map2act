@@ -1,4 +1,4 @@
-= simple_form_for(@place, html: {id: "modal_addform", class: "form-horizontal"}) do |f|
+= simple_form_for(@place, html: {id: "modal_addform", class: ""}) do |f|
   #result
     - if @origin 
       .control-group
@@ -7,59 +7,53 @@
           = f.input :approved, as: :boolean, label: false, input_html: {class: "input-xlarge"} 
   %fieldset
     .control-group
-      %label.control-label{for: "add_owner_name"} Your Name
+      %label.control-label{:for => "add_type"} בחרו מה מתאר בצורה הטובה ביותר את המיזם שלכם
+      .controls
+        = f.input :type ,collection: TYPES, include_blank: false, label: false 
+
+    .control-group
+      %label.control-label{for: "add_owner_name"} שם 
       .controls
         = f.input :owner_name, label: false, maxlength: 100, input_html: {class: "input-xlarge"} 
     .control-group
-      %label.control-label{:for => "add_owner_email"} Your Email
+      %label.control-label{:for => "add_owner_email"} דואר אלקטרוני
       .controls
         = f.input :owner_email, label: false, input_html: {class: "input-xlarge"} 
     .control-group
-      %label.control-label{:for => "add_title"} Company/Event Name
+      %label.control-label{:for => "add_title"} שם המיזם
       .controls
         = f.input :title, label: false,  input_html: {class: "input-xlarge"}
-    .control-group
-      %label.control-label{:for => "add_type"} Type
-      .controls
-        = f.input :type, collection: TYPES, include_blank: false, label: false 
-
-    .control-group.form-date
-      %label.control-label{:for => "add_date"} Event Date
-      .controls
-        = f.input :date, include_blank: false, label: false, input_html: {class: "input-xlarge"}
+    
 
 
     .control-group
       %label.control-label{for: "add_longitude"} Coordinates
       .controls
-        = f.input :lat, label: false, required: false, placeholder: "Latitude", input_html: {class: "input-medium"}, wrapper_html: {class: "span2", style: "margin-left: 0px;"}
-        = f.input :lng, label: false, required: false, placeholder: "Longitude", input_html: {class: "input-medium"}, wrapper_html: {class: "span2", style: "margin-left: 30px;"}
-        .clearfix
-        %p.help-block
-          We prefer that you enter your coordinates for accuracy. You can 
-          = link_to "use Google Maps", "http://support.google.com/maps/bin/answer.py?hl=en&answer=1334236", target: "_new"
-          to find your coordinates. 
+        = f.input :lat, label: false, required: false, placeholder: "Latitude"
+        = f.input :lng, label: false, required: false, placeholder: "Longitude"
+
     .control-group
-      %label.control-label{:for => "add_address"} Address
+      %label.control-label{:for => "add_address"} כתובת 
       .controls
-        = f.input :address, label: false, input_html: {class: "input-xlarge"}
-        %p.help-block
-          Should be your
-          = succeed "." do
-            %b full street address (including city and zip)
-          If it works on Google Maps, it will work here.
+        = f.input :address,label: false, :input_html =>{:id => 'gmaps-input-address', class: "input-xlarge"}, :placeholder => 'Start typing a place...'
+      #gmaps-canvas
     .control-group
-      %label.control-label{:for => "add_uri"} Website URL
+      %label.control-label{:for => "add_uri"} אתר
       .controls
         = f.input :uri, label: false, placeholder: "http://www.yourdomain.com",input_html: {class: "input-xlarge"}
         %p.help-block
           Should be your full URL with no trailing slash, e.g. "http://www.yoursite.com"
     .control-group
-      %label.control-label{:for => "add_description"} Description
+      %label.control-label{:for => "add_description"} תארו במשפט אחד מה אתם עושים
       .controls
         = f.input :description, label: false, input_html: {class: "input-xlarge", maxlength: "150"}
         %p.help-block
           Brief, concise description. What's your product? What problem do you solve? Max 150 chars.
+
+    .control-group
+      %label.control-label{:for => "add_description_big"} מהי תרומתכם החברתית?
+      .controls
+        = f.input :description_big, label: false, as: :text, input_html: {style: "width: 90%;", :rows => 10}
 
   .modal-footer.pull-right
     %button#submit-it.btn.btn-primary.btn-medium
