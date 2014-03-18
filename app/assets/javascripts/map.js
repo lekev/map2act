@@ -6,7 +6,6 @@ var highestZIndex = 0;
 var agent = "default";
 var zoomControl = true;
 
-
 // detect browser agent
 $(document).ready(function() {
     if (navigator.userAgent.toLowerCase().indexOf("iphone") > -1 || navigator.userAgent.toLowerCase().indexOf("ipod") > -1) {
@@ -192,7 +191,9 @@ function initialize() {
         marker.type = val[1];
         gmarkers.push(marker);
 
+
         markerTitles.push(val[0]); // ENABLE TYPEAHEAD SEARCH
+
 
         // add marker hover events (if not viewing on mobile)
         if (agent == "default") {
@@ -257,6 +258,7 @@ function initialize() {
     $('#search').typeahead({
         source: markerTitles,
         updater: function(obj) {
+
             marker_id = jQuery.inArray(obj, markerTitles);
             if (marker_id > -1) {
                 goToMarker(marker_id);
