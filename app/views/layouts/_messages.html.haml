@@ -1,15 +1,7 @@
-.alert-container{style: "margin-top: -15px; width: 940px;"}
+.alert-container{style: "margin-top: 60px; width: 940px;"}
   - flash.each do |name, msg|
     %div{:class => "alert alert-#{name == :notice ? 'success' : 'error'} fade in"}
       %a.close{"data-dismiss" => "alert"} ×
       = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
     
-:javascript
-  window.setTimeout(function() {
-    $(".alert-container").fadeTo(500, 0, function(){
-      $('.alert').hide(function(){
-        $('.alert-container').hide();
-      });
-    });
-  }, 3000);
 

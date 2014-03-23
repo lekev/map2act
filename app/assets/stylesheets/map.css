@@ -74,6 +74,10 @@ html, body, .container, .canvas, #map_canvas
   display: none;
 }
 
+.gm-style-iw {
+  direction: ltr;
+}
+
 
 
 /* menubar */
