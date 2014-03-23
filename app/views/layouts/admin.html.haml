@@ -10,7 +10,7 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=false&language=iw" 
     = javascript_include_tag "application"
-
+    = include_gon 
 
     = csrf_meta_tags
     = yield(:head)

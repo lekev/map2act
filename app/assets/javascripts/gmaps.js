@@ -5,6 +5,7 @@ var marker;
 // initialise the google maps objects, and add listeners
 function gmaps_init() {
 
+
     // center of the universe
     var latlng = new google.maps.LatLng(31.9298264, 34.768551);
 
@@ -28,6 +29,17 @@ function gmaps_init() {
         draggable: true
     });
 
+    //add marker if alreay exist
+    if (typeof gon.place === "undefined") {
+
+    } else {
+        console.log(gon.place)
+        place = new google.maps.LatLng(gon.place[0].latitude, gon.place[0].longitude);
+        console.log(place)
+        marker.setPosition(place);
+    }
+
+
     // event triggered when marker is dragged and dropped
     google.maps.event.addListener(marker, 'dragend', function() {
         geocode_lookup('latLng', marker.getPosition());
@@ -44,6 +56,13 @@ function gmaps_init() {
 
 // move the marker to a new position, and center the map on it
 function update_map(geometry) {
+    map_form.fitBounds(geometry.viewport);
+    console.log(geometry.location)
+    marker.setPosition(geometry.location)
+}
+
+
+function init_marker(geometry) {
     map_form.fitBounds(geometry.viewport)
     marker.setPosition(geometry.location)
 }
@@ -52,8 +71,8 @@ function update_map(geometry) {
 function update_ui(address, latLng) {
     $('#gmaps-input-address').autocomplete("close");
     $('#gmaps-input-address').val(address);
-    // $('#place_lat').val(latLng.lat());
-    //$('#place_lng').val(latLng.lng());
+    $('#place_lat').val(latLng.lat());
+    $('#place_lng').val(latLng.lng());
 }
 
 // Query the Google geocode object
@@ -71,7 +90,6 @@ function geocode_lookup(type, value, update) {
     request = {};
     request[type] = value;
 
-    console.log(request);
 
     geocoder.geocode(request, function(results, status) {
         $('#gmaps-error').html('');
@@ -159,6 +177,8 @@ function autocomplete_init() {
         }
     });
 }; // autocomplete_init
+
+
 
 $(document).ready(function() {
 

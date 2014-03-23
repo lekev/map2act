@@ -4,7 +4,7 @@ TYPES = [["סטארט-אפ", 'startup'],
           ['קואופרטיב', 'coworking'],
           ['קרנות ומשקיעים', 'investor'],
           ['אקדמיה והכשרה', 'academy'],
-      	['פרמקלצ', 'permaculture'], 
+      	['פרמקלציר', 'permaculture'], 
           ['האב', 'hub']]
 
 

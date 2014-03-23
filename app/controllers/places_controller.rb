@@ -19,6 +19,9 @@ class PlacesController < ApplicationController
       else
         redirect_to root_path
       end
+    else
+      flash[:notice] = "Error"
+      redirect_to root_path
     end
   end
 
@@ -45,6 +48,17 @@ class PlacesController < ApplicationController
         gon.places.push place
       end
     end
+
+  end
+
+  def edit
+    gon.place = []
+    @place  = Place.find(params[:id])
+
+    placejs = {latitude: @place.lat, longitude: @place.lng};
+
+    gon.place.push placejs
+
 
   end
 

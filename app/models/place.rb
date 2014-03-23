@@ -5,7 +5,6 @@ class Place
   cache
 
   field :approved, type: Boolean, default: false 
-  field :title
   field :type # startup, accelerator, incubator, coworking, investor, service, event
   field :lat, type: Float
   field :lng, type: Float
@@ -14,7 +13,7 @@ class Place
   field :description
   field :description_big
   field :sector
-  field :owner_name
+  field :title
   field :owner_email
   field :date, type: Date
 
@@ -30,7 +29,7 @@ class Place
   scope :hub, where(type: "hub").asc(:title)
   scope :permaculture, where(type: "permaculture").asc(:title)
 
-  validates_presence_of :title, :address, :uri, :description,:description_big , :owner_name, :owner_email
+  validates_presence_of :title, :address, :uri, :description,:description_big , :owner_email
   validates_presence_of :date, if: :event?
 
   geocoded_by :address

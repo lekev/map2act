@@ -12,17 +12,13 @@
         = f.input :type ,collection: TYPES, include_blank: false, label: false 
 
     .control-group
-      %label.control-label{for: "add_owner_name"} שם 
+      %label.control-label{for: "add_title"} שם המיזם 
       .controls
-        = f.input :owner_name, label: false, maxlength: 100, input_html: {class: "input-xlarge"} 
+        = f.input :title, label: false, maxlength: 100, input_html: {class: "input-xlarge"} 
     .control-group
       %label.control-label{:for => "add_owner_email"} דואר אלקטרוני
       .controls
         = f.input :owner_email, label: false, input_html: {class: "input-xlarge"} 
-    .control-group
-      %label.control-label{:for => "add_title"} שם המיזם
-      .controls
-        = f.input :title, label: false,  input_html: {class: "input-xlarge"}
     
 
 
@@ -50,6 +46,9 @@
       %label.control-label{:for => "add_description_big"} מהי תרומתכם החברתית?
       .controls
         = f.input :description_big, label: false, as: :text, input_html: {style: "width: 90%;", :rows => 10}
+
+    = f.input :lat, label: false, :as => :hidden, required: false, placeholder: "Latitude"
+    = f.input :lng, label: false, :as => :hidden, required: false, placeholder: "Longitude"
 
   .modal-footer.pull-right
     %button#submit-it.btn.btn-primary.btn-medium
