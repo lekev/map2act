@@ -3,7 +3,10 @@
   .wrapper
     .logo
       = link_to image_tag("logo.png"), root_path
-      
+
+    .fb-like
+      .fb-like-box{'data-href' =>"https://www.facebook.com/mapped2act",'data-width'=> '235', 'data-colorscheme'=> "dark", 'data-show-faces' =>"false", 'data-header'=>"true" ,'data-stream'=> "false", 'data-show-border'=>"false"}
+    
     
     .buttons
       %a.btn.btn-large.btn{"data-toggle" => "modal", :href => "#modal_info"} עלינו
@@ -12,6 +15,7 @@
       
     .search
       %input#search{:autocomplete => "off", "data-provide" => "typeahead", :name => "search", :placeholder => "Type a company name...", :type => "text"}/
+
     
 
 

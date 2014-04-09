@@ -20,10 +20,6 @@
             = "Pending"
             %span.badge.badge-important.pull-right= @places.pending.count
         %li
-          = link_to "#startup", :'data-toggle' => 'tab' do
-            = "Startups"
-            %span.badge.badge-info.pull-right= @places.startup.count
-        %li
           = link_to "#accelerator", :'data-toggle' => 'tab' do
             = "Accelerators"
             %span.badge.badge-info.pull-right= @places.accelerator.count
@@ -40,13 +36,11 @@
             = "Academy"
             %span.badge.badge-info.pull-right= @places.academy.count
         %li
-          = link_to "#hub", :'data-toggle' => 'tab' do
-            = "Hub"
-            %span.badge.badge-info.pull-right= @places.hub.count
-        %li
-          = link_to "#permaculture", :'data-toggle' => 'tab' do
-            = "Permaculture"
-            %span.badge.badge-info.pull-right= @places.permaculture.count
+          = link_to "#social", :'data-toggle' => 'tab' do
+            = "Social"
+            %span.badge.badge-info.pull-right= @places.social.count
+
+
 
     .tabbable.span10
       .tab-content
@@ -54,18 +48,14 @@
           = render 'places/admin/all'
         .tab-pane#pending
           = render 'places/admin/pending'
-        .tab-pane#startup
-          = render 'places/admin/startups'
+        .tab-pane#academy
+          = render 'places/admin/academies'
         .tab-pane#accelerator
           = render 'places/admin/accelerators'
         .tab-pane#coworking
           = render 'places/admin/coworkings'
         .tab-pane#investor
           = render 'places/admin/investors'
-        .tab-pane#academy
-          = render 'places/admin/academies'
-        .tab-pane#hub
-          = render 'places/admin/hub'
-        .tab-pane#permaculture
-          = render 'places/admin/permaculture'
+        .tab-pane#social
+          = render 'places/admin/social'
       

@@ -20,14 +20,11 @@ class Place
   field :coordinates, type: Array, default: [0.0,0.0]
 
   scope :pending, where(approved: false).asc(:title)
-  scope :startup, where(type: "startup").asc(:title)
+  scope :social, where(type: "startup").asc(:title)
   scope :accelerator, where(type: "accelerator").asc(:title)
-  scope :incubator, where(type: "incubator").asc(:title)
   scope :coworking, where(type: "coworking").asc(:title)
   scope :investor, where(type: "investor").asc(:title)
   scope :academy, where(type: "academy").asc(:title)
-  scope :hub, where(type: "hub").asc(:title)
-  scope :permaculture, where(type: "permaculture").asc(:title)
 
   validates_presence_of :title, :address, :uri, :description,:description_big , :owner_email
   validates_presence_of :date, if: :event?
