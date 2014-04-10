@@ -20,7 +20,7 @@ class Place
   field :coordinates, type: Array, default: [0.0,0.0]
 
   scope :pending, where(approved: false).asc(:title)
-  scope :social, where(type: "startup").asc(:title)
+  scope :social, where(type: "social").asc(:title)
   scope :accelerator, where(type: "accelerator").asc(:title)
   scope :coworking, where(type: "coworking").asc(:title)
   scope :investor, where(type: "investor").asc(:title)

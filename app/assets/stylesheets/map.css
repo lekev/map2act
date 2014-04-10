@@ -24,6 +24,16 @@ form
  margin-bottom: 0px;
 }
 
+
+.copyright {
+font-size: 18px;
+color: #999999;
+float: left;
+padding-left: 40px;
+padding-right: 10px;
+padding-top: 9px;
+}
+
 /* FACEBOOK */
 .fb-like
 {
@@ -104,7 +114,7 @@ html, body, .container, .canvas, #map_canvas
 }
 .menu .wrapper
 {
-  height: 392px;
+  height: 325px;
 }
 .menu .logo
 {

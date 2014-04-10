@@ -1,4 +1,4 @@
-SITE_NAME = "Represent.ph"
+SITE_NAME = "Map2Act"
 
 COUNTRY = "Israel"
 CITY = ""
