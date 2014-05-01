@@ -22,7 +22,7 @@ $(document).ready(function() {
 // resize marker list onload/resize
 $(document).ready(function() {
     newHeight = $('html').height() - $('#menu > .wrapper').height();
-    $('#list').css('height', newHeight + "px");
+    $('#list.map').css('height', newHeight + "px");
 });
 $(window).resize(function() {
     resizeList();
@@ -31,7 +31,7 @@ $(window).resize(function() {
 // resize marker list to fit window
 function resizeList() {
     newHeight = $('html').height() - $('#menu > .wrapper').height();
-    $('#list').css('height', newHeight + "px");
+    $('#list.map').css('height', newHeight + "px");
 }
 
 

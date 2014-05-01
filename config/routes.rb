@@ -2,6 +2,7 @@ Represent::Application.routes.draw do
   devise_for :users
 
   match "/admin" => "places#admin"
+  match "/embedded" => "places#embedded"
 
   resources :places
   resources :settings

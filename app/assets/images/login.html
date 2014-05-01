@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://localhost:3000/login -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="http://localhost:3000/d04688f3b1f8e1e477d4f93246014e50d0ad53ce.css">
+
+
+<script type="text/javascript">__meteor_runtime_config__ = {"meteorRelease":"0.8.0","ROOT_URL":"http://localhost:3000/","ROOT_URL_PATH_PREFIX":"","autoupdateVersion":"8d2fcb9b97ace337cdb9a17029801d760790fe47"};</script><style type="text/css"></style>
+
+  <script type="text/javascript" src="./login_files/underscore.js"></script>
+  <script type="text/javascript" src="./login_files/meteor.js"></script>
+  <script type="text/javascript" src="./login_files/json.js"></script>
+  <script type="text/javascript" src="./login_files/ejson.js"></script>
+  <script type="text/javascript" src="./login_files/logging.js"></script>
+  <script type="text/javascript" src="./login_files/reload.js"></script>
+  <script type="text/javascript" src="./login_files/deps.js"></script>
+  <script type="text/javascript" src="./login_files/random.js"></script>
+  <script type="text/javascript" src="./login_files/retry.js"></script>
+  <script type="text/javascript" src="./login_files/check.js"></script>
+  <script type="text/javascript" src="./login_files/id-map.js"></script>
+  <script type="text/javascript" src="./login_files/ordered-dict.js"></script>
+  <script type="text/javascript" src="./login_files/geojson-utils.js"></script>
+  <script type="text/javascript" src="./login_files/minimongo.js"></script>
+  <script type="text/javascript" src="./login_files/livedata.js"></script>
+  <script type="text/javascript" src="./login_files/follower-livedata.js"></script>
+  <script type="text/javascript" src="./login_files/application-configuration.js"></script>
+  <script type="text/javascript" src="./login_files/insecure.js"></script>
+  <script type="text/javascript" src="./login_files/mongo-livedata.js"></script>
+  <script type="text/javascript" src="./login_files/autoupdate.js"></script>
+  <script type="text/javascript" src="./login_files/standard-app-packages.js"></script>
+  <script type="text/javascript" src="./login_files/autopublish.js"></script>
+  <script type="text/javascript" src="./login_files/coffeescript.js"></script>
+  <script type="text/javascript" src="./login_files/localstorage.js"></script>
+  <script type="text/javascript" src="./login_files/jquery.js"></script>
+  <script type="text/javascript" src="./login_files/observe-sequence.js"></script>
+  <script type="text/javascript" src="./login_files/htmljs.js"></script>
+  <script type="text/javascript" src="./login_files/ui.js"></script>
+  <script type="text/javascript" src="./login_files/accounts-base.js"></script>
+  <script type="text/javascript" src="./login_files/srp.js"></script>
+  <script type="text/javascript" src="./login_files/accounts-password.js"></script>
+  <script type="text/javascript" src="./login_files/sass.js"></script>
+  <script type="text/javascript" src="./login_files/reactive-dict.js"></script>
+  <script type="text/javascript" src="./login_files/iron-router.js"></script>
+  <script type="text/javascript" src="./login_files/bootstrap-3.js"></script>
+  <script type="text/javascript" src="./login_files/webapp.js"></script>
+  <script type="text/javascript" src="./login_files/session.js"></script>
+  <script type="text/javascript" src="./login_files/spacebars.js"></script>
+  <script type="text/javascript" src="./login_files/templating.js"></script>
+  <script type="text/javascript" src="./login_files/global-imports.js"></script>
+  <script type="text/javascript" src="./login_files/template.layout.js"></script>
+  <script type="text/javascript" src="./login_files/template.nav.js"></script>
+  <script type="text/javascript" src="./login_files/template.login.js"></script>
+  <script type="text/javascript" src="./login_files/router.js"></script>
+  <script type="text/javascript" src="./login_files/chat.js"></script>
+  <script type="text/javascript" src="./login_files/core.js"></script>
+  <script type="text/javascript" src="./login_files/demo.js"></script>
+  <script type="text/javascript" src="./login_files/layout.js"></script>
+  <script type="text/javascript" src="./login_files/login.js"></script>
+  <script type="text/javascript" src="./login_files/main.js"></script>
+  <script type="text/javascript" src="./login_files/service-configuration.js"></script>
+  <script type="text/javascript" src="./login_files/blaze-layout.js"></script>
+
+
+<script type="text/javascript">
+if (typeof Package === 'undefined' || 
+    ! Package.webapp || 
+    ! Package.webapp.WebApp || 
+    ! Package.webapp.WebApp._isCssLoaded()) 
+  document.location.reload(); 
+</script>
+
+
+<link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/js/page_context.js"></script></head>
+<body screen_capture_injected="true">
+
+
+
+<!-- BEGIN HEADER -->
+    <div class="header navbar navbar-inverse">
+        <!-- BEGIN TOP NAVIGATION BAR -->
+        <div class="navbar-inner">
+            <!-- BEGIN NAVIGATION HEADER -->
+            <div class="header-seperation">
+                <!-- BEGIN MOBILE HEADER -->
+                <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
+                    <li class="dropdown">
+                        <a id="main-menu-toggle" href="http://localhost:3000/login#main-menu" class="">
+                            <div class="iconset top-menu-toggle-white"></div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- END MOBILE HEADER -->
+                <!-- BEGIN LOGO -->
+                <a href="http://localhost:3000/login#">
+                    <img src="./login_files/logo.png" class="logo" alt="" data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="106" height="21">
+                </a>
+                <!-- END LOGO -->
+                <!-- BEGIN LOGO NAV BUTTONS -->
+                <ul class="nav pull-right notifcation-center">
+                    <li class="dropdown" id="header_task_bar">
+                        <a href="http://localhost:3000/login#" class="dropdown-toggle active" data-toggle="">
+                            <div class="iconset top-home"></div>
+                        </a>
+                    </li>
+                    <li class="dropdown" id="header_inbox_bar">
+                        <a href="http://localhost:3000/login#" class="dropdown-toggle">
+                            <div class="iconset top-messages"></div>
+                            <span class="badge" id="msgs-badge">2</span>
+                        </a>
+                    </li>
+                    <!-- BEGIN MOBILE CHAT TOGGLER -->
+                    <li class="dropdown" id="portrait-chat-toggler" style="display:none">
+                        <a href="http://localhost:3000/login#sidr" class="chat-menu-toggle">
+                            <div class="iconset top-chat-white"></div>
+                        </a>
+                    </li>
+                    <!-- END MOBILE CHAT TOGGLER -->
+                </ul>
+                <!-- END LOGO NAV BUTTONS -->
+            </div>
+            <!-- END NAVIGATION HEADER -->
+            <!-- BEGIN CONTENT HEADER -->
+            <div class="header-quick-nav">
+                <!-- BEGIN HEADER LEFT SIDE SECTION -->
+                <div class="pull-left">
+                    <!-- BEGIN SLIM NAVIGATION TOGGLE -->
+                    <ul class="nav quick-section">
+                        <li class="quicklinks">
+                            <a href="http://localhost:3000/login#" class="" id="layout-condensed-toggle">
+                                <div class="iconset top-menu-toggle-dark"></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- END SLIM NAVIGATION TOGGLE -->
+                    <!-- BEGIN HEADER QUICK LINKS -->
+                    <ul class="nav quick-section">
+                        <li class="quicklinks">
+                            <a href="http://localhost:3000/login#" class="">
+                                <div class="iconset top-reload"></div>
+                            </a>
+                        </li>
+                        <li class="quicklinks">
+                            <span class="h-seperate"></span>
+                        </li>
+                        <li class="quicklinks">
+                            <a href="http://localhost:3000/login#" class="">
+                                <div class="iconset top-tiles"></div>
+                            </a>
+                        </li>
+                        <!-- BEGIN SEARCH BOX -->
+                        <li class="m-r-10 input-prepend inside search-form no-boarder">
+                            <span class="add-on">
+                                <span class="iconset top-search"></span>
+                            </span>
+                            <input name="" type="text" class="no-boarder" placeholder="Search Dashboard" style="width:250px;">
+                        </li>
+                        <!-- END SEARCH BOX -->
+                    </ul>
+                    <!-- BEGIN HEADER QUICK LINKS -->
+                </div>
+                <!-- END HEADER LEFT SIDE SECTION -->
+                <!-- BEGIN HEADER RIGHT SIDE SECTION -->
+                <div class="pull-right">
+                    <div class="chat-toggler">
+                        <!-- BEGIN NOTIFICATION CENTER -->
+                        <a href="http://localhost:3000/login#" class="dropdown-toggle" id="my-task-list" data-placement="bottom" data-content="" data-toggle="dropdown" data-original-title="Notifications">
+                            <div class="user-details">
+                                <div class="username">
+                                    <span class="badge badge-important">3</span>&nbsp;John
+                                    <span class="bold">&nbsp;Smith</span>
+                                </div>
+                            </div>
+                            <div class="iconset top-down-arrow"></div>
+                        </a>
+                        <div id="notification-list" style="display:none">
+                            <div style="width:300px">
+                                <!-- BEGIN NOTIFICATION MESSAGE -->
+                                <div class="notification-messages info">
+                                    <div class="user-profile">
+                                        <img src="./login_files/d.jpg" alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
+                                    </div>
+                                    <div class="message-wrapper">
+                                        <div class="heading">Title of Notification</div>
+                                        <div class="description">Description...</div>
+                                        <div class="date pull-left">A min ago</div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!-- END NOTIFICATION MESSAGE -->
+                            </div>
+                        </div>
+                        <!-- END NOTIFICATION CENTER -->
+                        <!-- BEGIN PROFILE PICTURE -->
+                        <div class="profile-pic">
+                            <img src="./login_files/avatar_small.jpg" alt="" data-src="assets/img/profiles/avatar_small.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="35" height="35">
+                        </div>
+                        <!-- END PROFILE PICTURE -->
+                    </div>
+                    <!-- BEGIN HEADER NAV BUTTONS -->
+                    <ul class="nav quick-section">
+                        <!-- BEGIN SETTINGS -->
+                        <li class="quicklinks">
+                            <a data-toggle="dropdown" class="dropdown-toggle pull-right" href="http://localhost:3000/login#" id="user-options">
+                                <div class="iconset top-settings-dark"></div>
+                            </a>
+                            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="user-options">
+                                <li><a href="http://localhost:3000/login#">Normal Link</a>
+                                </li>
+                                <li><a href="http://localhost:3000/login#">Badge Link&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="http://localhost:3000/login#"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Separated Link</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END SETTINGS -->
+                        <li class="quicklinks">
+                            <span class="h-seperate"></span>
+                        </li>
+                        <!-- BEGIN CHAT SIDEBAR TOGGLE -->
+                        <li class="quicklinks">
+                            <a id="chat-menu-toggle" href="http://localhost:3000/login#sidr" class="chat-menu-toggle">
+                                <div class="iconset top-chat-dark">
+                                    <span class="badge badge-important hide" id="chat-message-count">1</span>
+                                </div>
+                            </a>
+                            <!-- BEGIN OPTIONAL RECENT CHAT POP UP NOTIFICATION -->
+                            <div class="simple-chat-popup chat-menu-toggle hide">
+                                <div class="simple-chat-popup-arrow"></div>
+                                <div class="simple-chat-popup-inner">
+                                    <div style="width:100px">
+                                        <div class="semi-bold">Name</div>
+                                        <div class="message">Message...</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END OPTIONAL RECENT CHAT POP UP NOTIFICATION -->
+                        </li>
+                        <!-- END CHAT SIDEBAR TOGGLE -->
+                    </ul>
+                    <!-- END HEADER NAV BUTTONS -->
+                </div>
+                <!-- END HEADER RIGHT SIDE SECTION -->
+            </div>
+            <!-- END CONTENT HEADER -->
+        </div>
+        <!-- END TOP NAVIGATION BAR -->
+    </div>
+    <!-- END HEADER -->
+	[object Object]<div id="cacaowebchromeextension"></div><script type="text/javascript">var Cacaoweb = { callbackIsRunning: function () { var cacaodiv = document.createElement("div"); cacaodiv.id = "cacaorunning"; document.body.appendChild(cacaodiv); } };</script><script id="isrunning" src="http://127.0.0.1:4001/isrunning" type="text/javascript"></script></body></html>

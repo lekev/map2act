@@ -1,0 +1,31 @@
+
+#menu.menu_embedded
+  .wrapper
+      
+    .search
+      %input#search{:autocomplete => "off", "data-provide" => "typeahead", :name => "search", :placeholder => "Type a company name...", :type => "text"}/
+
+    
+
+
+  %ul#list.list.embedded
+    - index = 0
+    - TYPES.each do |type|
+      %li.category
+        .category_item
+          .category_toggle{:id => "filter_#{type[1]}", :onClick => "toggle('#{type[1]}')"}
+          %a.category_info{:href => "#", :onClick => "toggleList('#{type[1]}')"}
+            %img{:alt => "", :src => "./images/icons/#{type[1]}.png"}>/
+            #{type[0]}
+            %span.total (#{@markers.send(type[1].to_sym).length})
+        %ul.list-items{:class => "list-#{type[1]}"}
+          - @markers.send(type[1].to_sym).each do |marker|
+            %li{:class => "#{marker.type}"}
+              %a{:href => "#", :onClick => "goToMarker('#{index}')", :onMouseOut => "markerListMouseOut('#{index}')", :onMouseOver => "markerListMouseOver('#{index}')"} 
+                #{marker.title}
+                -if marker.type == 'event'
+                  ,&nbsp;
+                  #{marker.date.strftime("%b %d")}
+            - index+=1
+  
+ 

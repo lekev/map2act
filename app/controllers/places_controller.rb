@@ -1,8 +1,8 @@
 class PlacesController < ApplicationController
   inherit_resources
-  layout "admin", except: [:map]
-  before_filter :authenticate_user!, except: [:map, :create, :new]
-  before_filter :set_origin, except: [:map]
+  layout "admin", except: [:map, :embedded]
+  before_filter :authenticate_user!, except: [:map, :embedded, :create, :new]
+  before_filter :set_origin, except: [:map, :embedded]
 
  
   def index
@@ -22,6 +22,31 @@ class PlacesController < ApplicationController
     else
       flash[:notice] = "Error"
       redirect_to root_path
+    end
+  end
+
+  def embedded
+        @place = Place.new
+
+    gon.places = []
+    
+
+    @markers = Place.where(approved: true).all
+
+    TYPES.each do |type|
+      @markers.send(type[1].to_sym).each do |value|
+        place = ["#{value.title}", 
+                "#{value.type}",
+                "#{value.lat}",
+                "#{value.lng}", 
+                "#{value.description}", 
+
+                "#{value.uri}", 
+                "#{value.address}",
+                "#{value.description_big}",
+                "#{value.date.strftime("%a, %b %e, %Y") if value.type == "event"}"]
+        gon.places.push place
+      end
     end
   end
 
