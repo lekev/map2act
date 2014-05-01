@@ -124,7 +124,11 @@ html, body, .container, .canvas, #map_canvas
   bottom: 18px;
   height: 310px;
   right:0px;
-  z-index:10000;
+  z-index:1000;
+}
+
+.search.embbed {
+  z-index: 1500;
 }
 .menu .wrapper
 {
