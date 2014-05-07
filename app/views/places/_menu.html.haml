@@ -31,7 +31,7 @@
         %ul.list-items{:class => "list-#{type[1]}"}
           - @markers.send(type[1].to_sym).each do |marker|
             %li{:class => "#{marker.type}"}
-              %a{:href => "#", :onClick => "goToMarker('#{index}')", :onMouseOut => "markerListMouseOut('#{index}')", :onMouseOver => "markerListMouseOver('#{index}')"} 
+              %a.startup{:href => "#", :onClick => "goToMarker('#{index}')", :onMouseOut => "markerListMouseOut('#{index}')", :onMouseOver => "markerListMouseOver('#{index}')"} 
                 #{marker.title}
                 -if marker.type == 'event'
                   ,&nbsp;

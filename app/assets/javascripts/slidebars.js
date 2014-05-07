@@ -237,7 +237,7 @@
                     $('html').removeClass('sb-active sb-active-left sb-active-right'); // Remove active classes.
                     if ($left) $left.removeClass('sb-active');
                     if ($right) $right.removeClass('sb-active');
-                    if (link) window.location = link; // If a link has been passed to the function, go to it.
+                    // if (link) window.location = link; // If a link has been passed to the function, go to it.
                 }, 400);
             }
         }
@@ -314,7 +314,7 @@
         });
 
         // Close Slidebar via Link
-        $('.sb-slidebar a').not('.sb-disable-close').on('click', function(event) {
+        $('.sb-slidebar a .startup').not('.sb-disable-close').on('click', function(event) {
             eventHandler(event, $(this)); // Handle the event.
             close($(this).attr('href')); // Close the Slidebar and pass link.
         });

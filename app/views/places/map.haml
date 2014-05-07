@@ -18,11 +18,12 @@
       = render "layouts/messages"
       .canvas
         #map_canvas
+        = render "footer"
       
       
-    .sidebar.sb-slidebar.sb-right.sb-style-overlay
+    .sidebar
       = render "menu"
-    = render "footer"
+
       
     = render "more_info"
     = render "modal_form"

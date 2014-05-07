@@ -57,14 +57,28 @@ html, body, .container, .canvas, #map_canvas
   height:150px;
   direction: ltr;
 
+
+}
+
+#navbar_top 
+{
+  margin-bottom: 0
+}
+
+#navbar_top .navbar-inner{
+  border: 0
+}
+
+#footer
+{
+  position: absolute;
 }
 
 #map_canvas
 {
   direction: ltr;
-  top: 65px;
-  bottom: 0px;
   z-index: 1;
+  padding-bottom: 25px
 }
 
 #map_canvas.embedded
@@ -107,17 +121,22 @@ html, body, .container, .canvas, #map_canvas
 /* menubar */
 .menu
 {
-  
   z-index: 2;
   font-size: 20px;
   font-weight: bold;
-  
   height: 100%;
+  width: 250px;
   background-color: #fff;
-  width: 100%;
 }
 
+@media(min-width:768px) {
 
+  .menu{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+}
 
 .menu_embedded
 {
@@ -403,6 +422,7 @@ html, body, .container, .canvas, #map_canvas
 /* modals */
 .modal
 {
+  top: 280px;
   background-color: transparent;
   overflow-y: auto;
   max-height: 90%;
@@ -436,15 +456,19 @@ html, body, .container, .canvas, #map_canvas
   opacity: 1;
 }
 
+@media(max-width:450px) {
 
-/* add marker modal */
-#modal_add
-{
-  /*margin-top: -40%*/
+  .modal{
+  width: 90%;
+  right: 5%;
+  
 }
+}
+
+
 #modal_add .modal-body
 {
-  /*max-height: none;*/
+  max-height: none;
   overflow-y: auto;
 }
 #modal_add fieldset
@@ -461,17 +485,13 @@ html, body, .container, .canvas, #map_canvas
   color: #777;
   max-width: 275px;
 }
-#modal_add .modal-footer
+#modal .modal-footer
 {
   text-align: left;
 }
 
 
-/* get info modal */
-#modal_info
-{
-  margin-top: -350px;
-}
+
 #modal_info .modal-body
 {
   max-height: none;

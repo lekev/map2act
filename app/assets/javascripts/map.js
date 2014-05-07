@@ -19,6 +19,8 @@ $(document).ready(function() {
 });
 
 
+
+
 // resize marker list onload/resize
 $(document).ready(function() {
     newHeight = $('html').height() - $('#menu > .wrapper').height();
@@ -40,17 +42,18 @@ function resizeList() {
 // initialize map
 function initialize() {
 
-    windowWidth = $(window).width();
 
+    //SLIDE
+    var windowWidth = $(window).width();
 
-    mySlidebars = new $.slidebars({
+    if (windowWidth < 800) {
+        $(".sidebar").addClass("sb-slidebar sb-right");
 
-    });
-    if (windowWidth > 800) {
-        mySlidebars.open("right");
+        mySlidebars = new $.slidebars({
+            siteClose: true
+        });
 
     }
-
 
 
 
@@ -278,7 +281,9 @@ function initialize() {
 
             marker_id = jQuery.inArray(obj, markerTitles);
             if (marker_id > -1) {
+
                 goToMarker(marker_id);
+
             }
             $("#search").val("");
             return obj;
@@ -292,11 +297,13 @@ function initialize() {
 
 // zoom to specific marker
 function goToMarker(marker_id) {
+
     if (marker_id > -1) {
         map.panTo(gmarkers[marker_id].getPosition());
         map.setZoom(17);
         google.maps.event.trigger(gmarkers[marker_id], 'click');
     }
+    mySlidebars.close("right");
 }
 
 // toggle (hide/show) markers of a given type (on the map)
