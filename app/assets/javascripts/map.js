@@ -28,6 +28,8 @@ $(window).resize(function() {
     resizeList();
 });
 
+
+
 // resize marker list to fit window
 function resizeList() {
     newHeight = $('html').height() - $('#menu > .wrapper').height();
@@ -37,6 +39,21 @@ function resizeList() {
 
 // initialize map
 function initialize() {
+
+    windowWidth = $(window).width();
+
+
+    mySlidebars = new $.slidebars({
+
+    });
+    if (windowWidth > 800) {
+        mySlidebars.open("right");
+
+    }
+
+
+
+
     // set map styles
     var mapStyles = [{
         featureType: "road",
@@ -267,6 +284,8 @@ function initialize() {
             return obj;
         }
     });
+
+
 
 }
 

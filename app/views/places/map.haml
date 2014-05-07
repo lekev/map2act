@@ -1,10 +1,9 @@
-!!!
 %html
   %head
  
     
     %title Mapped2act 
-    %meta{:content => "width=device-width, initial-scale=1.0, user-scalable=no", :name => "viewport"}
+    %meta{:content => "width=device-width,  initial-scale=1.0, user-scalable=no", :name => "viewport"}
       %meta{:charset => "UTF-8"}
         %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,700", :rel => "stylesheet", :type => "text/css"}
 
@@ -13,15 +12,18 @@
 
   %body
 
-    .container
+    #sb-site.container
+      = render "nav_bar"
+      
       = render "layouts/messages"
       .canvas
         #map_canvas
-      .sidebar
-        = render "menu"
-        = render "menu_mobile"
-        = render "nav_bar"
-        = render "footer"
+      
+      
+    .sidebar.sb-slidebar.sb-right.sb-style-overlay
+      = render "menu"
+    = render "footer"
+      
     = render "more_info"
     = render "modal_form"
     = render "modal_privacy"

@@ -8,6 +8,7 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem "twitter-bootstrap-rails"
+  gem "font-awesome-rails"
 end
 
 group :development do
