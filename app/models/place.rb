@@ -30,7 +30,7 @@ class Place
   validates_presence_of :date, if: :event?
 
   geocoded_by :address
-  before_save :geocode_if_required, :ensure_country
+  before_save :geocode_if_required
 
   def event?
     self.type == 'event'
@@ -40,12 +40,7 @@ class Place
     approved ? "Approved" : "Pending"
   end
 
-  def ensure_country
-    if self.address.downcase.index("Israel").nil?
-      self.address << ", Israel" # we need this country user defined in the future
-    end
-
-  end
+ 
 
   def plot_coordinates
     self.lng = self.coordinates[0]
