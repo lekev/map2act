@@ -461,7 +461,13 @@ html, body, .container, .canvas, #map_canvas
   .modal{
   width: 90%;
   right: 5%;
-  
+}
+
+  .logo img {
+    max-width: 145px;
+  }
+  .menu .wrapper {
+height: 250px;
 }
 }
 

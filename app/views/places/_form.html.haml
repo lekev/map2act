@@ -28,6 +28,8 @@
       %label.control-label{:for => "add_address"} כתובת 
       .controls
         = f.input :address,label: false, :input_html =>{:id => 'gmaps-input-address', class: "input-xlarge"}, :placeholder => 'Start typing a place...'
+        %p.help-block
+          יש לספק כתובת מדויקת ככל שניתן על מנת להציג את המיזם על המפה באופן אופטימלי.
       #gmaps-canvas
     .control-group
       %label.control-label{:for => "add_uri"} אתר

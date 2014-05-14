@@ -28,6 +28,7 @@ class Place
 
   validates_presence_of :title, :address, :uri, :description,:description_big , :owner_email
   validates_presence_of :date, if: :event?
+  validates :description_big, length:{maximum: 150}
 
   geocoded_by :address
   before_save :geocode_if_required
