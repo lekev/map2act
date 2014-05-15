@@ -45,9 +45,12 @@
           Brief, concise description. What's your product? What problem do you solve? Max 150 chars.
 
     .control-group
-      %label.control-label{:for => "add_description_big"} מהי תרומתכם החברתית?
+      %label.control-label{:for => "add_description_big"} איזה שינוי חברתי אתם שואפים ליצור וכיצד אתם מבצעים זאת?
       .controls
-        = f.input :description_big, label: false, as: :text, input_html: {style: "width: 90%;", :rows => 10}
+        = f.input :description_big, label: false, as: :text, input_html: {style: "width: 90%;",maxlength: "450", :rows => 10}
+        %p.help-block
+          Max 450 chars.
+
 
     = f.input :lat, label: false, :as => :hidden, required: false, placeholder: "Latitude"
     = f.input :lng, label: false, :as => :hidden, required: false, placeholder: "Longitude"
@@ -63,29 +66,7 @@
     - else
       %a.btn.btn-medium{"data-dismiss" => "modal", :href => "#"} Close
     
-  
-:javascript
-  $(document).ready(function() {
-    if ($("#place_type option:selected").text() != "Events"){ 
-      $(".form-date").hide();
-    }
-  });
 
-  $("#place_date").datepicker({ format: 'MM d, yyyy' });
-
-  $("#place_type").change(function() {
-    if ($("#place_type option:selected").val() == "event") {
-      $(".form-date").slideToggle();
-      $("#place_date").attr("required", "required");
-    }
-    else
-    {
-      if ($("#place_date").is(":visible")) {
-        $(".form-date").slideToggle();
-        $("#place_date").removeAttr("required", "required");
-      }
-    }
-  });
   
   
   
