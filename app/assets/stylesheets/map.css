@@ -34,11 +34,21 @@ padding-right: 10px;
 padding-top: 9px;
 }
 
-/* FACEBOOK */
-.fb-like
+/* Social */
+
+.btc-box
 {
-  height: 87px;
-  padding-right: 6px;
+  margin: 0 auto;
+}
+
+.share_btn {
+  display: inline-block;
+  vertical-align:top;
+}
+
+/* HACK */
+.modal-body {
+  max-height: none;
 }
 
 /* google maps */
