@@ -1,18 +1,20 @@
 %table.table.table-striped
   %thead
     %th
-      Title
+      Type
+    %th
+      Name
     %th
       Website
     %th
       Description
     %th
-      Date
-    %th
       Actions
   %tbody
     - @places.pending.each do |place|
       %tr
+        %td
+          = place.type
         %td
           = link_to place.title, place_path(place)
         %td

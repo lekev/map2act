@@ -1,5 +1,6 @@
 # encoding: UTF-8
-TYPES = [['עסק חברתי', 'coworking'],
+TYPES = [['עסק בדרום', 'south_company'],
+['עסק חברתי', 'coworking'],
 		["יוזמה חברתית", 'social'],
           ['קרנות ומשקיעים', 'investor'],
           ['חממות ומאיצים', 'accelerator'],

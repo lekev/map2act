@@ -38,14 +38,14 @@
         %p.help-block
           Should be your full URL with no trailing slash, e.g. "http://www.yoursite.com"
     .control-group
-      %label.control-label{:for => "add_description"} תארו במשפט אחד מה אתם עושים
+      %label.control-label{:for => "place_description"} תארו במשפט אחד מה אתם עושים
       .controls
         = f.input :description, label: false, input_html: {class: "input-xlarge", maxlength: "150"}
         %p.help-block
           Brief, concise description. What's your product? What problem do you solve? Max 150 chars.
 
     .control-group
-      %label.control-label{:for => "add_description_big"} איזה שינוי חברתי אתם שואפים ליצור וכיצד אתם מבצעים זאת?
+      %label.control-label.label_description_big{:for => "place_description_big"} איזה שינוי חברתי אתם שואפים ליצור וכיצד אתם מבצעים זאת?
       .controls
         = f.input :description_big, label: false, as: :text, input_html: {style: "width: 90%;",maxlength: "450", :rows => 10}
         %p.help-block

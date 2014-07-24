@@ -25,6 +25,17 @@ form
 }
 
 
+/* special idf */
+#item_south_company .category_info
+{
+  background-color: indianred;
+}
+
+#item_south_company .category_toggle
+{
+  background-color: red;
+}
+
 .copyright {
 font-size: 18px;
 color: #999999;
