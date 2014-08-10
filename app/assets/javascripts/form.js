@@ -13,6 +13,7 @@ $("#place_type").change ->
     $("#place_date").attr("required", "required")
   else
     if $("#place_date").is(":visible")
+    
       $(".form-date").slideToggle()
       $("#place_date").removeAttr("required", "required")
 */
@@ -21,7 +22,7 @@ $("#place_type").change ->
 $(document).ready(function() {
 
 
-    $(".label_description_big").text("תארו באיזה אופן אתם מעוניינים לאפשר לצרכנים לצרוך מכם ציינו ימי מכירה מרוכזים - מיקום ושעות, כתובת להזמנות אונליין, מבצעים, הנחות, וכל מידע שנראה לכם רלוונטי .")
+    $(".label_description_big").text("תארו באיזה אופן אתם מעוניינים לאפשר לצרכנים לצרוך מכם : ציינו ימי מכירה מרוכזים - מיקום ושעות, כתובת להזמנות אונליין, מבצעים, הנחות, וכל מידע שנראה לכם רלוונטי.")
     $('#place_type').on('change', function() {
         lab_descr = $(".label_description_big");
         if (this.value == 'south_company') {
