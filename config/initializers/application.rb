@@ -1,5 +1,5 @@
 # encoding: UTF-8
-TYPES = [['עסק בדרום', 'south_company'],
+TYPES = [
 ['עסק חברתי', 'coworking'],
 		["יוזמה חברתית", 'social'],
           ['קרנות ומשקיעים', 'investor'],
@@ -7,3 +7,4 @@ TYPES = [['עסק בדרום', 'south_company'],
           ['אקדמיה והכשרה', 'academy']]
 
 
+#['עסק בדרום', 'south_company'],
